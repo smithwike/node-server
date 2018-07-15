@@ -17,8 +17,8 @@ app.post('/books', (req, res)=>{
   crud.addItem(req.body).then((result)=>{
 		     
 		     if(result == 1){
-		     	console.log('item add success');
-		     	res.send('item add success');
+
+		     	res.redirect('/books');
 		     }else{
 		     	res.status(400).send('bad request');
 		     }
@@ -49,7 +49,7 @@ app.delete('/book/delete/:id', (req, res)=>{
 });
 
 app.put('/book/edit/:id', (req, res)=>{
-	
+
   crud.updateItem(req).then((result)=>{
 		    
 		     if(result == 1){
@@ -85,3 +85,4 @@ app.listen(port, ()=>{
 });
 
 
+module.exports = {app};
