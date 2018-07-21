@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "stable"
+  - "9.11.2"
 scripts:
   - "npm test"
 after_success:
